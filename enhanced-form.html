@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Registration Form</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        header, section, footer {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        h1, h2 {
+            color: #2c3e50;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        form {
+            display: grid;
+            grid-gap: 15px;
+        }
+        fieldset {
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        legend {
+            padding: 0 10px;
+            font-weight: bold;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input[type="checkbox"], input[type="radio"] {
+            width: auto;
+            margin-right: 10px;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .inline-group {
+            display: flex;
+            align-items: center;
+        }
+        .required:after {
+            content: " *";
+            color: red;
+        }
+        video, audio {
+            width: 100%;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Enhanced Registration Form</h1>
+        <p>Welcome to our comprehensive registration form. Please fill in all required fields marked with an asterisk (*).</p>
+        
+        <h2>Why Register With Us?</h2>
+        <ul>
+            <li>Access exclusive content and features</li>
+            <li>Receive personalized recommendations</li>
+            <li>Join our community of like-minded individuals</li>
+            <li>Get special offers and discounts</li>
+        </ul>
+        
+        <video controls poster="https://via.placeholder.com/800x450">
+            <source src="https://samplelib.com/lib/preview/mp4/sample-5s.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </header>
+
+    <section>
+        <h2>Pricing Plans</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Plan</th>
+                    <th>Features</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Basic</td>
+                    <td>Standard access</td>
+                    <td>$9.99/month</td>
+                </tr>
+                <tr>
+                    <td>Pro</td>
+                    <td>Enhanced features + support</td>
+                    <td>$19.99/month</td>
+                </tr>
+                <tr>
+                    <td>Enterprise</td>
+                    <td>Full access + premium support</td>
+                    <td>$49.99/month</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section>
+        <h2>Registration Form</h2>
+        <form id="registrationForm" action="#" method="post" novalidate>
+            <fieldset>
+                <legend>Personal Information</legend>
+                
+                <div class="form-group">
+                    <label for="fullName" class="required">Full Name</label>
+                    <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required autocomplete="name">
+                </div>
+                
+                <div class="form-group">
+                    <label for="email" class="required">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="example@domain.com" required autocomplete="email">
+                </div>
+                
+                <div class="form-group">
+                    <label for="password" class="required">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Create a password" required minlength="8" autocomplete="new-password">
+                    <small>Minimum 8 characters</small>
+                </div>
+                
+                <div class="form-group">
+                    <label for="confirmPassword" class="required">Confirm Password</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="birthdate">Date of Birth</label>
+                    <input type="date" id="birthdate" name="birthdate" max="2005-12-31">
+                </div>
+            </fieldset>
+            
+            <fieldset>
+                <legend>Contact Details</legend>
+                
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+                    <small>Format: 123-456-7890</small>
+                </div>
+                
+                <div class="form-group">
+                    <label for="address">Street Address</label>
+                    <input type="text" id="address" name="address" placeholder="123 Main St" autocomplete="street-address">
+                </div>
+                
+                <div class="form-group">
+                    <label for="country">Country</label>
+                    <select id="country" name="country" autocomplete="country">
+                        <option value="">Select a country</option>
+                        <option value="US">United States</option>
+                        <option value="CA">Canada</option>
+                        <option value="UK">United Kingdom</option>
+                        <option value="AU">Australia</option>
+                        <option value="JP">Japan</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="zipcode">Zip/Postal Code</label>
+                    <input type="text" id="zipcode" name="zipcode" placeholder="12345" pattern="[0-9]{5}" autocomplete="postal-code">
+                </div>
+            </fieldset>
+            
+            <fieldset>
+                <legend>Preferences</legend>
+                
+                <div class="form-group">
+                    <label>Preferred Contact Method</label>
+                    <div class="inline-group">
+                        <input type="radio" id="contactEmail" name="contactMethod" value="email" checked>
+                        <label for="contactEmail">Email</label>
+                    </div>
+                    <div class="inline-group">
+                        <input type="radio" id="contactPhone" name="contactMethod" value="phone">
+                        <label for="contactPhone">Phone</label>
+                    </div>
+                    <div class="inline-group">
+                        <input type="radio" id="contactMail" name="contactMethod" value="mail">
+                        <label for="contactMail">Mail</label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Interests (Select all that apply)</label>
+                    <div class="inline-group">
+                        <input type="checkbox" id="interestTech" name="interests" value="technology">
+                        <label for="interestTech">Technology</label>
+                    </div>
+                    <div class="inline-group">
+                        <input type="checkbox" id="interestSports" name="interests" value="sports">
+                        <label for="interestSports">Sports</label>
+                    </div>
+                    <div class="inline-group">
+                        <input type="checkbox" id="interestArts" name="interests" value="arts">
+                        <label for="interestArts">Arts</label>
+                    </div>
+                    <div class="inline-group">
+                        <input type="checkbox" id="interestScience" name="interests" value="science">
+                        <label for="interestScience">Science</label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="subscription">Subscription Plan</label>
+                    <select id="subscription" name="subscription" required>
+                        <option value="">Select a plan</option>
+                        <option value="basic">Basic ($9.99/month)</option>
+                        <option value="pro">Pro ($19.99/month)</option>
+                        <option value="enterprise">Enterprise ($49.99/month)</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="profileColor">Profile Color</label>
+                    <input type="color" id="profileColor" name="profileColor" value="#3498db">
+                </div>
+                
+                <div class="form-group">
+                    <label for="userRating">How would you rate your experience with similar services?</label>
+                    <input type="range" id="userRating" name="userRating" min="1" max="10" value="5">
+                    <output for="userRating" id="ratingValue">5</output>
+                </div>
+            </fieldset>
+            
+            <fieldset>
+                <legend>Additional Information</legend>
+                
+                <div class="form-group">
+                    <label for="bio">Biography</label>
+                    <textarea id="bio" name="bio" placeholder="Tell us about yourself" rows="4"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="website">Website</label>
+                    <input type="url" id="website" name="website" placeholder="https://example.com">
+                </div>
+                
+                <div class="form-group">
+                    <label for="referenceID">Reference ID</label>
+                    <input type="text" id="referenceID" name="referenceID" value="REG12345" readonly>
+                </div>
+                
+                <div class="form-group">
+                    <label for="profilePhoto">Upload Profile Photo</label>
+                    <input type="file" id="profilePhoto" name="profilePhoto" accept="image/*">
+                </div>
+            </fieldset>
+            
+            <div class="form-group">
+                <div class="inline-group">
+                    <input type="checkbox" id="terms" name="terms" required>
+                    <label for="terms" class="required">I agree to the terms and conditions</label>
+                </div>
+            </div>
+            
+            <button type="submit">Submit Registration</button>
+            <button type="reset">Reset Form</button>
+        </form>
+    </section>
+
+    <footer>
+        <h2>About Us</h2>
+        <p>We are a company dedicated to providing excellent services to our customers. Our team works hard to ensure your satisfaction.</p>
+        
+        <audio controls>
+            <source src="https://samplelib.com/lib/preview/mp3/sample-3s.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        
+        <p>&copy; 2023 Enhanced Registration Form. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Simple script to show the range value
+        document.getElementById('userRating').addEventListener('input', function() {
+            document.getElementById('ratingValue').value = this.value;
+        });
+        
+        // Password confirmation validation
+        document.getElementById('registrationForm').addEventListener('submit', function(e) {
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            
+            if (password !== confirmPassword) {
+                alert('Passwords do not match!');
+                e.preventDefault();
+            }
+        });
+    </script>
+</body>
+</html>
